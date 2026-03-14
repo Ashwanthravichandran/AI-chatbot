@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Public Sector AI Assistant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="sidebar">
+
+<h3>Conversations</h3>
+<ul id="history"></ul>
+
+</div>
+
+<div class="chat-area">
+
+<h2>Public Sector AI Assistant</h2>
+
+<div id="chatbox"></div>
+
+<button id="scrollBtn" onclick="scrollToBottom()">⬇</button>
+
+<div class="input-area">
+
+<input id="msg"
+placeholder="Ask anything about public sector organization..."
+autocomplete="off">
+
+<button onclick="sendMessage()">Send</button>
+
+<button onclick="startVoice()">🎤</button>
+
+<button onclick="clearChat()">Clear</button>
+
+<input type="file" id="pdfUpload">
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const input = document.getElementById("msg")
+const chatbox = document.getElementById("chatbox")
+const history = document.getElementById("history")
+
+input.addEventListener("keypress", e=>{
+if(e.key==="Enter") sendMessage()
+})
+
+function sendMessage(){
+
+let msg=input.value.trim()
+
+if(msg==="") return
+
+chatbox.innerHTML+=`<div class="user">${msg}</div>`
+
+history.innerHTML+=`<li>${msg}</li>`
+
+fetch("/chat",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({message:msg})
+})
+.then(res=>res.json())
+.then(data=>{
+chatbox.innerHTML+=`<div class="bot">${data.response}</div>`
+chatbox.scrollTop=chatbox.scrollHeight
+})
+
+input.value=""
+}
+
+function clearChat(){
+
+fetch("/clear",{method:"POST"})
+
+chatbox.innerHTML=""
+history.innerHTML=""
+}
+
+function scrollToBottom(){
+chatbox.scrollTop=chatbox.scrollHeight
+}
+
+function startVoice(){
+
+const recognition = new webkitSpeechRecognition()
+
+recognition.onresult = function(event){
+
+input.value = event.results[0][0].transcript
+
+}
+
+recognition.start()
+}
+
+document.getElementById("pdfUpload").addEventListener("change", function(){
+
+let file=this.files[0]
+
+let formData=new FormData()
+
+formData.append("file",file)
+
+fetch("/upload",{
+method:"POST",
+body:formData
+})
+.then(res=>res.json())
+.then(data=>{
+alert("Document processed successfully")
+})
+
+})
+
+</script>
+
+</body>
+</html>
