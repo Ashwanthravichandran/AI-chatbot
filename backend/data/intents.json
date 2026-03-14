@@ -1,0 +1,219 @@
+{
+ "intents":[
+
+{
+ "tag":"greeting",
+ "patterns":[
+  "hi",
+  "hello",
+  "hey",
+  "good morning",
+  "good afternoon",
+  "good evening",
+  "hi there",
+  "hello bot",
+  "hey assistant",
+  "is anyone there",
+  "hi chatbot",
+  "greetings",
+  "hey there",
+  "hello assistant",
+  "hi system"
+ ],
+ "responses":[
+  "Hello! How can I assist you today?",
+  "Hi there! What can I help you with?",
+  "Welcome! Ask me anything about company services.",
+  "Hello employee! How may I help you?"
+ ]
+},
+
+{
+ "tag":"hr_policy",
+ "patterns":[
+  "leave policy",
+  "vacation policy",
+  "annual leave",
+  "company leave rules",
+  "how many leave days",
+  "how many leaves do employees get",
+  "how to apply leave",
+  "leave application process",
+  "employee leave rules",
+  "holiday policy",
+  "paid leave policy",
+  "how do i request leave",
+  "how to take vacation",
+  "leave approval process",
+  "leave system"
+ ],
+ "responses":[
+  "Employees receive 20 annual leave days per year.",
+  "You can apply for leave through the HR portal.",
+  "Leave requests can be submitted using the employee self-service portal.",
+  "For leave requests please use the HR management system."
+ ]
+},
+
+{
+ "tag":"it_support",
+ "patterns":[
+  "reset password",
+  "forgot password",
+  "change my password",
+  "password reset help",
+  "email issue",
+  "email not working",
+  "system not working",
+  "computer problem",
+  "laptop not working",
+  "wifi problem",
+  "network issue",
+  "cannot login",
+  "login problem",
+  "technical problem",
+  "software issue"
+ ],
+ "responses":[
+  "Please contact IT support at it_support@company.com.",
+  "You can reset your password through the employee portal.",
+  "For technical issues, create a support ticket in the IT helpdesk system.",
+  "IT support can help resolve system or login issues."
+ ]
+},
+
+{
+ "tag":"company_events",
+ "patterns":[
+  "company event",
+  "next event",
+  "upcoming event",
+  "team meeting",
+  "company celebration",
+  "office party",
+  "employee meetup",
+  "company gathering",
+  "corporate event",
+  "office event schedule",
+  "team building event",
+  "annual company event",
+  "company activities",
+  "employee engagement event",
+  "next company meeting"
+ ],
+ "responses":[
+  "The next company event is the annual employee meet.",
+  "HR will announce upcoming events soon.",
+  "You can check the events calendar in the employee portal.",
+  "Stay tuned for upcoming company activities and events."
+ ]
+},
+
+{
+ "tag":"working_hours",
+ "patterns":[
+  "working hours",
+  "office timing",
+  "office hours",
+  "company working time",
+  "when does office start",
+  "when does office close",
+  "company schedule",
+  "work timing",
+  "daily work hours",
+  "office start time",
+  "office end time",
+  "employee working hours",
+  "work schedule",
+  "company office hours",
+  "what time is office open"
+ ],
+ "responses":[
+  "Our standard working hours are 9 AM to 6 PM Monday to Friday.",
+  "Employees usually work from 9:00 AM to 6:00 PM with a lunch break.",
+  "Office hours are Monday to Friday, 9 AM to 6 PM."
+ ]
+},
+
+{
+ "tag":"contact_hr",
+ "patterns":[
+  "contact hr",
+  "hr email",
+  "how to contact hr",
+  "hr support",
+  "hr help",
+  "need hr assistance",
+  "talk to hr",
+  "hr department contact",
+  "hr phone number",
+  "human resources contact",
+  "reach hr",
+  "hr complaint",
+  "hr enquiry",
+  "hr help desk",
+  "hr services"
+ ],
+ "responses":[
+  "You can contact HR at hr@company.com.",
+  "HR support is available through the employee portal.",
+  "Please reach out to hr@company.com for HR related queries."
+ ]
+},
+
+{
+ "tag":"goodbye",
+ "patterns":[
+  "bye",
+  "goodbye",
+  "see you",
+  "see you later",
+  "talk later",
+  "bye assistant",
+  "thanks bye",
+  "ok bye",
+  "exit chat",
+  "end chat",
+  "bye bot",
+  "good night",
+  "good day",
+  "thank you goodbye",
+  "leaving now"
+ ],
+ "responses":[
+  "Goodbye! Have a great day.",
+  "See you again!",
+  "Take care. I'm here whenever you need help.",
+  "Thank you for chatting with me!"
+ ]
+},
+
+{
+ "tag":"fallback",
+ "patterns":[
+  "random question",
+  "unknown question",
+  "something else",
+  "tell me something",
+  "i have a question",
+  "help me",
+  "can you help",
+  "what can you do",
+  "i need assistance",
+  "support please",
+  "help request",
+  "question",
+  "info",
+  "information",
+  "details"
+ ],
+ "responses":[
+  "I'm not sure about that. Please contact HR or IT support.",
+  "Sorry, I couldn't understand that. Could you rephrase your question?",
+  "Please ask about HR policies, IT support, or company services.",
+  "I can help with HR policies, IT support, and company information."
+ ]
+}
+
+ ]
+}
